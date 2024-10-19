@@ -79,10 +79,10 @@ You're presented with another form asking for your name. As in the previous leve
 
 We'll have to escape the text area tag a little differently from the input one (in Level Two) by using the following payload:
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```bash
-**</textarea><script>alert('XXXTESTXXX');</script>**
+</textarea><script>alert('XXXTESTXXX');</script>
 ```
 
 This turns this:
