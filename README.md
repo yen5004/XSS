@@ -56,7 +56,7 @@ It wouldn't work if you were to try the previous JavaScript payload because you 
 `**Try entering the payload:**`
 
 ```bash
-**"><script>alert('XXXTESTXXX');</script>**
+"><script>alert('XXXTESTXXX');</script>
 ```
 
 The critical part of the payload is the **`">`,** which closes the value parameter and the input tag.
@@ -97,7 +97,7 @@ Into This:
 
 ```jsx
 <div class="text-center">
-	<h2>Hello, <textarea></textarea><script>alert('**XXTESTXX**');</script></textarea></h2>
+	<h2>Hello, <textarea></textarea><script>alert('XXTESTXX');</script></textarea></h2>
 </div>
 ```
 
